@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const myHelper = require('../util/helper')
 const underscore = require('underscore')
@@ -13,6 +15,7 @@ router.get('/test-me', function (req, res) {
     res.send('My first ever api!')
 });
 
+<<<<<<< Updated upstream
 router.get('/hello', function (req, res) {
    
     res.send('Hello there!')
@@ -39,3 +42,21 @@ router.get('/candidates/:canidatesName', function(req, res){
 
 module.exports = router;
 // adding this comment for no reason
+=======
+
+
+module.exports = router;
+
+
+
+
+
+router.get('/movies', function (req, res) {
+    let movie =['rang de basanti','lord of the ring','batman begins']
+    console.log(movies)
+    res.send(movies)
+})
+
+
+        
+>>>>>>> Stashed changes
