@@ -1,15 +1,30 @@
+const { response } = require("express")
 const UserModel= require("../models/userModel")
+ //const BookModel=require("../models/userModel")
+//const createUser= async function (req, res) {
+   ////// let data= req.body
+    //let savedData= await UserModel.create(data)
+    //res.send({msg: savedData})
+//}
 
-const createUser= async function (req, res) {
+//const getUsersData= async function (req, res) {
+  /////  let allUsers= await UserModel.find()
+   // res.send({msg: allUsers})
+//}
+
+const createBook=async function (req,res) {
     let data= req.body
-    let savedData= await UserModel.create(data)
-    res.send({msg: savedData})
+   let saveData= await UserModel.create(data)
+   /response.send({msg:saveData})
+
+}
+ 
+const getBooksData=async function (req, res) {
+    let allbooks= await UserModel.find()
+    res.send({msg:allbooks})
 }
 
-const getUsersData= async function (req, res) {
-    let allUsers= await UserModel.find()
-    res.send({msg: allUsers})
-}
-
-module.exports.createUser= createUser
-module.exports.getUsersData= getUsersData
+//module.exports.createUser= createUser
+//module.exports.getUsersData= getUsersData
+module.exports.createBook=createBook
+module.exports.getBooksData= getBooksData
