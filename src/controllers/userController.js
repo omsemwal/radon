@@ -15,7 +15,7 @@ const UserModel= require("../models/userModel")
 const createBook=async function (req,res) {
     let data= req.body
    let saveData= await UserModel.create(data)
-   /response.send({msg:saveData})
+    res.send({msg:saveData})
 
 }
  
