@@ -17,8 +17,19 @@ const getdeatils = async function (req, res) {
     res.send({data: deatils})
 
 }
+const createPublisher= async function (res, req){
+    let data = req.body
+    let savedData = await bookModel.create(data)
+   res.send({ msg:savedData})
+}
+
+
+
+
+
+
 
 module.exports.createBook= createBook
 module.exports.getBooksData= getBooksData
 module.exports. getdeatils= getdeatils
-
+module.exports.createPublisher=createPublisher
