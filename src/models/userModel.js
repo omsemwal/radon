@@ -12,9 +12,19 @@ const userSchema = new mongoose.Schema( {
     password: String,
     gender: {
         type: String,
-        enum: ["male", "female", "other"]
+        enum: ["male", "female", "other"],
+        required: true
     },
     age: Number,
+    "isDeleted":{
+        type : Boolean,
+        default:false
+    },
+    posts: {
+        type:[],
+        default:[],
+        required: true
+    },
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema)
